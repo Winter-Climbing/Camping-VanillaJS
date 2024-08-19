@@ -1,7 +1,7 @@
 const options = {
   enableHighAccuracy: true,
-  maximumAge: 30000,
-  timeout: 15000,
+  maximumAge: Infinity,
+  timeout: 5000,
 };
 
 export const getLocation = () => {
