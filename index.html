@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevCourse_Camping_Map</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- fontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- typelt -->
+    <script src="https://unpkg.com/typeit@8.0.5/dist/index.umd.js"></script>
+    <!-- js -->
+    <script type="module" src="./app/main.js" defer></script>
+  </head>
+  <body>
+    <span id="loading">모두 고생많으셨습니다!!</span>
+
+    <!-- 지도를 표시할 div 입니다 -->
+    <div id="map">
+      <main id="aside">
+        <div class="logo">
+          <img src="./imgs/logo.png" alt="" />
+        </div>
+        <div class="searchBox">
+          <input
+            type="text"
+            placeholder="캠핑장 이름을 검색해주세요 ex) 야영장"
+            id="searchInput"
+          />
+          <i class="fa-solid fa-magnifying-glass" id="searchButton"></i>
+        </div>
+
+        <h1>캠핑장 이름</h1>
+        <div class="desc">
+          <div class="desc_imgBox">
+            <img src="" alt="엑박테스트중!" />
+          </div>
+          <div class="desc_content">
+            <h2 class="desc_content-address">주소</h2>
+            <p class="desc_content-paragraph">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+              officia animi at quos ab, quasi adipisci officiis amet earum
+              facere tenetur molestiae unde sit doloremque! Expedita omnis
+              libero excepturi consequatur?
+            </p>
+          </div>
+        </div>
+
+        <div class="detailContents">
+          <div class="detailContents_homepage">
+            <div>
+              <img src="./imgs/details/home.svg" alt="홈페이지 아이콘" />
+            </div>
+            <h3>홈페이지</h3>
+            <a href="">content</a>
+          </div>
+          <div class="detailContents_operation">
+            <div>
+              <img src="./imgs/details/time.svg" alt="현재운영여부 아이콘" />
+            </div>
+            <h3>현재운영여부</h3>
+            <p>content</p>
+          </div>
+          <div class="detailBox_direction">
+            <div>
+              <img src="./imgs/details/pin.svg" alt="오시는 길 아이콘" />
+            </div>
+            <h3>오시는 길</h3>
+            <p>content</p>
+          </div>
+          <div class="detailBox_resveCl">
+            <div>
+              <img
+                src="./imgs/details/schedule.svg"
+                alt="예약가능여부 아이콘"
+              />
+            </div>
+            <h3>예약가능여부</h3>
+            <p>content</p>
+          </div>
+          <div class="detailBox_caravInnerFclty">
+            <div>
+              <img src="./imgs/details/mall.svg" alt="내부시설 아이콘" />
+            </div>
+            <h3>내부시설</h3>
+            <p>content</p>
+          </div>
+          <div class="detailBox_glampInnerFclty">
+            <div>
+              <img src="./imgs/details/cooktop.svg" alt="취사도구 아이콘" />
+            </div>
+            <h3>취사도구</h3>
+            <p>content</p>
+          </div>
+          <div class="detailBox_animalCmgCl">
+            <div>
+              <img
+                src="./imgs/details/dashicons_pets.svg"
+                alt="애완견가능여부 아이콘"
+              />
+            </div>
+
+            <h3>애완견가능여부</h3>
+            <p>content</p>
+          </div>
+        </div>
+      </main>
+      <aside id="searchResults"></aside>
+    </div>
+    <!-- <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8d04679cb22e5d9147ccc9195ef94ef0&libraries=clusterer"></script> -->
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=%VITE_KAKAO_MAPS_API_KEY%&libraries=clusterer"
+    ></script>
+  </body>
+</html>

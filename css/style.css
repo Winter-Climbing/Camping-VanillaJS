@@ -1,0 +1,48 @@
+@import url(reset.css);
+@import url(logoAndSearch.css);
+@import url(card.css);
+@import url(detail.css);
+@import url(searchList.css);
+@import url(overlay.css);
+@import url(loading.css);
+
+:root {
+  --margin-bottom-20: 20px;
+  --margin-bottom-40: 40px;
+
+  --color-white: #ffffff;
+  --color-black: #050a13;
+  --color-blue700: #405966;
+  --color-brand600: #0b75ad;
+  --color-blue500: #5194b8;
+  --color-blue400: #a0deff;
+  --color-blue300: #c7dce8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+input:focus {
+  outline: none;
+}
+
+#map {
+  width: 100vw;
+  height: 100dvh;
+}
+
+#aside {
+  position: fixed;
+  width: 500px;
+  height: 100%;
+  background-color: white;
+  z-index: 999;
+  padding: 0px 40px 40px;
+}

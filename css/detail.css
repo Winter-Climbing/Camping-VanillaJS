@@ -1,0 +1,20 @@
+.detailContents > div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: var(--margin-bottom-20);
+}
+
+.detailContents > div > div {
+  margin-right: 10px;
+}
+
+.detailContents > div > h3 {
+  min-width: 100px;
+  margin-right: 10px;
+}
+
+.detailContents > div > a {
+  word-wrap: break-word;
+  overflow: hidden;
+}
