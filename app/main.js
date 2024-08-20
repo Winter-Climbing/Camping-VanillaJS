@@ -1,5 +1,5 @@
 import { hideLoadingType, showLoadingType } from "./components/index.js";
-import { campingData } from "./network/index.js";
+import { basedListUrl, campingData } from "./network/index.js";
 import {
   createOverlay,
   initializeMap,
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     let { latitude, longitude } = await getLocation();
     const { map, cluster } = await initializeMap(latitude, longitude);
-    const data = await campingData.getData();
+    const data = await campingData.getData(basedListUrl);
     const closestMarkerData = findClosestMarker(latitude, longitude, data);
 
     const initMarkers = (filteredData) => {
