@@ -4,11 +4,15 @@ export default class CampingService {
   }
 
   async getData(basedList) {
-    try {
-      const data = await this.http.fetch(basedList);
-      return data.response.body.items.item;
-    } catch (error) {
-      throw new Error("Camping 데이터 가져오기 실패:", error);
-    }
+    const response = await this.http.fetch(basedList);
+
+    return response.response.body.items.item;
+  }
+
+  async getSearchData(searchList, keyword) {
+    const query = keyword ? `${searchList}${encodeURIComponent(keyword)}` : "";
+    const response = await this.http.fetch(query);
+
+    return response.response.body.items.item;
   }
 }

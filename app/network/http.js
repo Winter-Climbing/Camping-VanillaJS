@@ -4,6 +4,7 @@ export default class HttpClient {
   }
 
   async fetch(url, options) {
+    console.log(`${this.baseURL}${url}`);
     const res = await fetch(`${this.baseURL}${url}`, {
       method: "GET",
     });

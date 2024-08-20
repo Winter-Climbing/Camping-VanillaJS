@@ -1,3 +1,5 @@
+import { campingData, searchListUrl } from "../../network";
+
 export const searchData = (data, initMarkers, map) => {
   const searchInput = document.getElementById("searchInput");
   const searchButton = document.getElementById("searchButton");
@@ -5,15 +7,17 @@ export const searchData = (data, initMarkers, map) => {
 
   let markers = [];
 
-  const searchData = () => {
+  const createSearchData = async () => {
     const query = searchInput.value.trim().toLowerCase();
-    const filteredData = data
-      .filter((item) => item.facltNm.toLowerCase().includes(query))
-      .slice(0, 30);
+    let filteredData = [];
 
-    searchResultsContainer.style.display = "block";
+    query
+      ? (filteredData = await campingData.getSearchData(searchListUrl, query))
+      : (filteredData = data);
 
-    searchResultsContainer.innerHTML = `
+    if (filteredData && filteredData.length !== 0) {
+      searchResultsContainer.style.display = "block";
+      searchResultsContainer.innerHTML = `
       <ul>${filteredData
         .map(
           (item, index) => `
@@ -28,6 +32,10 @@ export const searchData = (data, initMarkers, map) => {
         )
         .join("")}
       </ul>`;
+    } else {
+      searchInput.value = "";
+      alert("검색 결과가 없습니다");
+    }
 
     markers = initMarkers(filteredData);
 
@@ -64,10 +72,10 @@ export const searchData = (data, initMarkers, map) => {
     }
   };
 
-  searchButton.addEventListener("click", searchData);
+  searchButton.addEventListener("click", createSearchData);
   searchInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
-      searchData();
+      createSearchData();
     }
   });
 };
